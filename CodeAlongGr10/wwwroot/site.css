@@ -1,0 +1,38 @@
+﻿
+.logo {
+    background-color: #0094ff;
+    color: #ffffff;
+    padding: 0 1rem 0 1rem;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    background-color: grey;
+}
+
+.container {
+    flex-grow: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+footer {
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: darkgray;
+}

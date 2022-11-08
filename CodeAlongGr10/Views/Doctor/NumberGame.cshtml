@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "NumberGame";
+}
+
+<h2>Number Game</h2>
+<h3>Guess between 1 and 1000</h3>
+
+<form asp-action="numbergame" method="post">
+    <label>Please enter your guess: </label>
+    <input type="number" name="input" />
+    <input type="submit" value="Guess Number" class="btn btn-primary" />
+</form>
+
+
+@if (ViewBag.Result == null)
+{
+    <p>@ViewBag.Message</p>
+}
+
+@if (ViewBag.Result != null)
+{
+    <p>@ViewBag.Message</p>
+}

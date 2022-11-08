@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "GetSession";
+}
+
+<h1>GetSession</h1>
+
+
+@if (ViewBag.Session != null)
+{
+    <p>Your saved session reads: @ViewBag.Session (from viewbag)</p>
+}
+
+@if(Context.Session.GetString("Session") != null)
+{
+    <p>Your saved session reads: @Context.Session.GetString("Session")</p>
+}
+
+@if(ViewBag.Cookie != null)
+{
+    <p>Saved cookie reads: @ViewBag.Cookie (from viewbag) </p>
+}
+
+@if(Context.Request.Cookies["Cookie"] != null)
+{
+    <p>Your saved cookie reads: @Context.Request.Cookies["Cookie"] from cookies</p>
+}

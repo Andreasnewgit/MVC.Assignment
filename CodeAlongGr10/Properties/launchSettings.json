@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "CodeAlongGr10": {
+    "MCV": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
