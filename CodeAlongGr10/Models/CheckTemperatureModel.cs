@@ -27,11 +27,6 @@
             {
                 return $"Your temperature is {age} and you do not have a fever";
             }
-
         }
-
-     
-
-
     }
 }

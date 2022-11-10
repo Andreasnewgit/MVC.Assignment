@@ -1,7 +1,22 @@
-﻿
+﻿@model PersonViewModel
 @{
     ViewData["Title"] = "Index";
 }
 
 <h2>Index</h2>
 <p>Welcome to my ASP.NET MVC Project!</p>
+
+
+@*<div class="row">
+    <h6 class="col">Id</h6>
+    <h6 class="col">Name</h6>
+    <h6 class="col">City</h6>
+    <h6 class="col">Phone Number</h6>
+    <h6 class="col"> </h6>
+
+</div>
+@foreach (var person in Model.tempList)
+{
+    <partial name="_personPartial" model="person" />
+}*@
+

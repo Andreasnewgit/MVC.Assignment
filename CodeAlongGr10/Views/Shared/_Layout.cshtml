@@ -32,14 +32,11 @@
                     <a class="nav-link text dark" asp-controller="Doctor" asp-action="CheckAge">Fever Check</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link text dark" asp-controller="Doctor" asp-action="NumberGame">Number Game</a>
+                        <a class="nav-link text dark" asp-controller="NumberGame" asp-action="NumberGame">Number Game</a>
                 </li>
                     <li class="nav-item">
                         <a class="nav-link text dark" asp-controller="People" asp-action="Index">People Index</a>
                     </li>
-
-
-
               @*  <li class="nav-item">
                     <a class="nav-link text dark" asp-controller="Doctor" asp-action="SetSession">Set Session</a>
                 </li>
@@ -49,8 +46,7 @@
                             <a class="nav-link text dark" asp-controller="Doctor" asp-action="GetSession">Get Session</a>
                         </li>
                 }*@
-                
-
+               
             </ul>
             </div>
         
@@ -62,7 +58,8 @@
 
     <footer>
         <div class="footer">
-            <p>&copy; @DateTime.Now.ToString() Andreas Lyckholm</p>
+
+            <p>&copy; @DateTime.Now.ToString()</p>
         </div>
     </footer>
 

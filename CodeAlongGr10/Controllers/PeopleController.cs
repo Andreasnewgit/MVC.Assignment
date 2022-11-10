@@ -39,7 +39,6 @@ namespace MCV.Controllers
             if(personToDelete != null)
             {
                 PersonViewModel.listOfPeople.Remove(personToDelete);
-
             }
             return RedirectToAction("Index");
         }

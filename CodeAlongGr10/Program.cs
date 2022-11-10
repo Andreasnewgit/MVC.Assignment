@@ -17,7 +17,7 @@ app.UseRouting();
 app.MapControllerRoute(
     name: "numbergame",
     pattern: "numbergame",
-    defaults: new { controller = "Doctor", action = "NumberGame" });
+    defaults: new { controller = "NumberGame", action = "NumberGame" });
 app.MapControllerRoute(
     name: "fevercheck",
     pattern: "fevercheck",

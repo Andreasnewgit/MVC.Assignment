@@ -5,8 +5,10 @@
 
 <h3>List of People</h3>
 
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
 <p>
-    <a asp-action="Create" class="btn btn-outline-danger btn-lg">Add new person</a>
+    <a asp-action="Create" class="btn btn-outline-secondary btn-lg">Add new person</a>
 </p>
 @*@Model.person.Name*@
 
@@ -15,7 +17,7 @@
 <table id="customers">
     <thead>
         <tr>
-            <th>Id</th>
+           @* <th>Id</th>*@
             <th>Name</th>
             <th>City</th>
             <th>Phone number</th>
@@ -26,7 +28,7 @@
         @foreach (var person in Model.tempList)
         {
             <tr>
-                <td>@person.Id</td>
+                @*<td>@person.Id</td>*@
                 <td>@person.Name</td>
                 <td>@person.City</td>
                 <td>@person.PhoneNumber</td>
@@ -35,6 +37,43 @@
         }
     </tbody>
 </table>
+
+@*<h4>Show data as partial:</h4>
+
+<div class="row">
+    <h6 class="col">Id</h6>
+    <h6 class="col">Name</h6>
+    <h6 class="col">City</h6>
+    <h6 class="col">Phone Number</h6>
+    <h6 class="col"> </h6>
+    
+</div>
+@foreach (var person in Model.tempList)
+{
+    <partial name="_personPartial" model="person"/>
+}*@
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("customers");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
 
 <style>
     #customers {

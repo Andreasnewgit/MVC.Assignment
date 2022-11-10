@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MCV.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CodeAlongGr10.Controllers
 {
@@ -6,6 +7,13 @@ namespace CodeAlongGr10.Controllers
     {
         public IActionResult Index()
         {
+            //if (PersonViewModel.listOfPeople.Count == 0)
+            //    PersonViewModel.GeneratePeople();
+
+            //PersonViewModel vm = new PersonViewModel();
+
+            //vm.tempList = PersonViewModel.listOfPeople;
+            //return View(vm);
             return View();
         }
 
