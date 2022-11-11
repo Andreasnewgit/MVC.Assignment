@@ -1,0 +1,90 @@
+﻿ public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult GetAllPeople()
+        {
+            return PartialView("_PeoplePartial", PeopleRepository.AllPeople);
+        }
+
+        [HttpPost]
+        public IActionResult GetPersonById(int id)
+        {
+            Person person = PeopleRepository.AllPeople.FirstOrDefault(p => p.ID == id);
+            List<Person>
+    people = new List<Person>
+        ();
+        if (person != null)
+        {
+        people.Add(person);
+        }
+        return PartialView("_PeoplePartial", people);
+        }
+        
+
+        [HttpPost]
+        public IActionResult RemovePersonById(int id)
+        {
+        if (PeopleRepository.AllPeople.Exists(p => p.ID == id))
+        {
+        PeopleRepository.RemovePerson(id);
+
+        return StatusCode(200);
+        }
+
+        return StatusCode(404);
+        }
+
+
+
+        function ListAllPeople() {
+        $.ajax({
+        type: "POST",
+        url: "Ajax/ListAllPeople",
+        success: function(response) {
+        $("#partial-view-url").html(response);
+        }
+        });
+
+        function DeletePerson() {
+        $.ajax({
+        type: "POST",
+        url: "Ajax/DeletePerson",
+        success: function(response) {
+        $("#div-partial").html(response);
+        }
+        })
+        }
+
+
+
+
+
+
+
+
+
+
+
+        function GetAllPeople(){
+        $.get("/Ajax/GetAllPeople", null, function (data) {
+        $("#AjaxContainer").html(data)
+        });
+        }
+
+        function GetPersonById(){
+        $.post("/Ajax/GetPersonById", { id: PersonIDInput.value }, function (data) {
+        $("#AjaxContainer").html(data)
+        });
+        }
+
+        function DeletePersonById(){
+        $.post("/Ajax/RemovePersonById", { id: PersonIDInput.value }, null)
+        .done(function (){
+        $("#ErrorMessages").html("Successfully deleted person");
+        })
+        .fail(function (){
+        $("#ErrorMessages").html("Failed to delete person");
+        });

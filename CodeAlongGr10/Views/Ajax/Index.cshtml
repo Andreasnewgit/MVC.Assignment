@@ -1,0 +1,57 @@
+﻿<label>List of People</label>
+<button onclick="ListAllPeople()" id="listAllBtn" type="submit">List All People</button>
+
+<label>Id for details</label>
+<input type="text" id="id" name="id" />
+<button onclick="GetDetails()" id="details" type="submit">Details</button>
+
+<label>Delete person by Id</label>
+<input type="text" id="delete" />
+<button onclick="DeletePerson()" id="deletePersonBtn" type="submit">Delete Person</button>
+
+
+
+<div id="div-partial"> 
+
+</div>
+
+<div id="partial-view-url" data-request-url="@Url.Action("LoadPartialView", "ControllerName")">
+
+</div>
+
+
+@foreach (var person in Model.tempList)
+{
+    <partial name="_personPartial" model="person"/>
+}
+
+<script>
+    function GetDetails() {
+        var inputId = $("#id").val();
+        //var inputId = document.getElementById("id")
+        $.ajax({
+            type: "POST",
+            url: "Ajax/GetDetails?id=" + inputId,
+            success: function (response) {
+                $("#div-partial").html(response);
+            }
+        });
+    }
+
+    function DeletePerson() {
+        var inputId = $("#id").val();
+
+        $.ajax({
+            type: "POST",
+            url: "Ajax/DeletePerson?id" + inputId,
+            success: function (response) {
+                $("#div-partial").html(response);
+            }
+        });
+    }
+</script>
+
+
+
+@*<script src="Js/Scripts.js"> </script>*@
+

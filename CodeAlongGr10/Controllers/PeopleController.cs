@@ -43,5 +43,17 @@ namespace MCV.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public IActionResult PartialIndex()
+        {
+            if (PersonViewModel.listOfPeople.Count == 0)
+                PersonViewModel.GeneratePeople();
+
+            PersonViewModel vm = new PersonViewModel();
+
+            vm.tempList = PersonViewModel.listOfPeople;
+            return View(vm);
+        }
+
     }
 }

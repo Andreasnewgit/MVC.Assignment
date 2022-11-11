@@ -15,7 +15,6 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-grey box-shadow mb-3">
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
             <ul class="navbar-nav flex-grow-1">
-
                 <li class="nav-item">
                     <a class="nav-link text dark" asp-controller="Home" asp-action="Index">Index</a>
                 </li>
@@ -32,11 +31,17 @@
                     <a class="nav-link text dark" asp-controller="Doctor" asp-action="CheckAge">Fever Check</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link text dark" asp-controller="NumberGame" asp-action="NumberGame">Number Game</a>
+                    <a class="nav-link text dark" asp-controller="NumberGame" asp-action="NumberGame">Number Game</a>
                 </li>
-                    <li class="nav-item">
-                        <a class="nav-link text dark" asp-controller="People" asp-action="Index">People Index</a>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link text dark" asp-controller="People" asp-action="Index">People Index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text dark" asp-controller="People" asp-action="PartialIndex">PartialView Index</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text dark" asp-controller="Ajax" asp-action="Index">Ajax</a>
+                </li>               
               @*  <li class="nav-item">
                     <a class="nav-link text dark" asp-controller="Doctor" asp-action="SetSession">Set Session</a>
                 </li>
@@ -45,8 +50,7 @@
                         <li class="nav-item">
                             <a class="nav-link text dark" asp-controller="Doctor" asp-action="GetSession">Get Session</a>
                         </li>
-                }*@
-               
+                }*@               
             </ul>
             </div>
         
@@ -58,10 +62,10 @@
 
     <footer>
         <div class="footer">
-
             <p>&copy; @DateTime.Now.ToString()</p>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 
 </body>
 </html>

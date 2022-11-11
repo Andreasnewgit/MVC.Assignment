@@ -5,7 +5,7 @@
 
 <h3>List of People</h3>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for id.." title="Type in a name">
 
 <p>
     <a asp-action="Create" class="btn btn-outline-secondary btn-lg">Add new person</a>
@@ -17,7 +17,7 @@
 <table id="customers">
     <thead>
         <tr>
-           @* <th>Id</th>*@
+            <th>Id</th>
             <th>Name</th>
             <th>City</th>
             <th>Phone number</th>
@@ -28,7 +28,7 @@
         @foreach (var person in Model.tempList)
         {
             <tr>
-                @*<td>@person.Id</td>*@
+                <td>@person.Id</td>
                 <td>@person.Name</td>
                 <td>@person.City</td>
                 <td>@person.PhoneNumber</td>

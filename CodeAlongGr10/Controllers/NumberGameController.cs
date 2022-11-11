@@ -6,7 +6,7 @@ namespace MCV.Controllers
     {
         public IActionResult NumberGame()
         {
-            HttpContext.Session.SetInt32(SessionKeyNumber, random.Next(1, 101));
+            HttpContext.Session.SetInt32(SessionKeyNumber, random.Next(1, 1000));
             return View();
         }
 
