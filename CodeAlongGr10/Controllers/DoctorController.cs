@@ -21,10 +21,9 @@ namespace CodeAlongGr10.Controllers
             ViewBag.Result = CheckTemperatureModel.CheckHypothermia(input);
             ViewBag.Result = CheckTemperatureModel.CheckFever(input);
             return View();
-
         }
 
-   
+
         public IActionResult SetSession()
         {
             return View();

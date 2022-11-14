@@ -36,24 +36,9 @@ namespace MCV.Controllers
 
         [HttpPost]
         public IActionResult ListAllPeople()
-        {          
-            return PartialView("_personPartial", PersonViewModel.Ge);
+        {
+            return PartialView("_personPartial", PersonViewModel.listOfPeople);
         }
-
-
-        //[HttpPost]
-        //public IActionResult RemovePersonById(int id)
-        //{
-        //    if (PeopleRepository.AllPeople.Exists(p => p.ID == id))
-        //    {
-        //        PeopleRepository.RemovePerson(id);
-
-        //        return StatusCode(200);
-        //    }
-
-        //    return StatusCode(404);
-        //}
-
 
 
     }
