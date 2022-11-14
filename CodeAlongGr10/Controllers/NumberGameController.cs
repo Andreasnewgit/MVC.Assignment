@@ -22,7 +22,7 @@ namespace MCV.Controllers
         [HttpPost]
         public IActionResult NumberGuesser(int GuessedNumber)
         {
-            GuessingGameModel.CheckWin(HttpContext.Session, GuessedNumber, this);
+            GuessingGameModel.CheckGuess(HttpContext.Session, GuessedNumber, this);
             return View();
         }
     }

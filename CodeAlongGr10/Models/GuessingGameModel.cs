@@ -6,7 +6,7 @@ namespace MCV.Models
     {
         private static int randomNumber;
         private Random random = new Random();
-        private const string GuessTracker = "_Guesses";
+        private const int GuessTracker = 0;
         
 
         public GuessingGameModel()
@@ -18,7 +18,7 @@ namespace MCV.Models
             return randomNumber;
         }
 
-        public static void CheckWin(ISession session, int GuessedNumber, Controller con)
+        public static void CheckGuess(ISession session, int GuessedNumber, Controller con)
         {
             if (GuessedNumber == null)
             {
@@ -30,7 +30,8 @@ namespace MCV.Models
             {
                 con.ViewBag.Message = $"The answer was {session.GetInt32("NumberToGuess")} the number have been reset for a new game," +
                     $" you guessed you've guessed {GuessTracker} times";
-                session.SetInt32("NumberToGuess", new GuessingGameModel().GetNumber());
+                // Resets it by calling a new number
+                session.SetInt32("NumberToGuess", new GuessingGameModel().GetNumber());               
             }
 
             else if (GuessedNumber > session.GetInt32("NumberToGuess"))
