@@ -1,6 +1,6 @@
 ﻿
 <h2>Number Game</h2>
-<p>I've picked a number between 1, 100, try to guess it</p>
+<p>Guess a number between 1 and 1000</p>
 
 
 <form asp-action="NumberGuesser" method="post">
@@ -9,11 +9,11 @@
     <input type="submit" name="Submit" />
 </form>
 
-@if (ViewBag.Message == null)
+@*@if (ViewBag.Message == null)
 {
     <p>Please enter a number</p>
 }
-
+*@
 @if (ViewBag.Message != null)
 {
     <p>@ViewBag.Message</p>
