@@ -33,6 +33,37 @@ namespace MCV.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public IActionResult Search(string Search)
+        {
+
+            PersonViewModel personViewModel = new();
+
+            var list = PersonViewModel.listOfPeople;
+
+
+            if (!String.IsNullOrEmpty(Search))
+            {
+                var resultat = list.Where(x => x.Name.Contains(Search)).ToList();
+                if (resultat.Count == 0)
+                {
+                    resultat = list.Where(x => x.City.Contains(Search)).ToList();
+                }
+
+                personViewModel.tempList = resultat;
+
+            }
+            else
+            {
+                personViewModel.tempList = PersonViewModel.listOfPeople;
+            }
+            //return View(peopleViewModel);
+            return PartialView("_personPartial", personViewModel.tempList);
+        }
+
+
+
+
         public IActionResult Delete(string id)
         {
             var personToDelete = PersonViewModel.listOfPeople.First(x => x.Id == id);
