@@ -1,0 +1,36 @@
+﻿@model PersonViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>List of People</h3>
+
+<p> 
+    <a asp-action="Create">Add new person</a>
+</p>
+
+<h4>Show data as table</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Phone Number</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model.tempList)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.Name</td>
+                <td>@person.City</td>
+                <td>@person.PhoneNumber</td>
+                <td><a asp-action="Delete" asp-route-id=@person.Id class="btn btn-danger">Delete</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

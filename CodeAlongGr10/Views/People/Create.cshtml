@@ -1,0 +1,16 @@
+﻿@model PersonData
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<form asp-action="Create" method="post">
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <label asp-for="City"></label>
+    <input asp-for="City" />
+    <label asp-for="PhoneNumber"></label>
+    <input asp-for="PhoneNumber" />
+    <input type="submit" value="Create" />
+</form>
