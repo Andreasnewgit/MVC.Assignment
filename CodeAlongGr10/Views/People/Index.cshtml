@@ -9,6 +9,14 @@
     <a asp-action="Create">Add new person</a>
 </p>
 
+
+<form asp-action="Search" method="post">
+    <label>Search:</label>
+    <input type="text" placeholder="Search" name="SearchString" />
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>
+
+
 <h4>Show data as table</h4>
 
 <table class="table">

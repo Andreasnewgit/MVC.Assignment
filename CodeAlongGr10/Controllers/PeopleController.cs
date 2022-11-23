@@ -11,7 +11,6 @@ namespace MCV.Controllers
                 PersonViewModel.GeneratePeople();
 
             PersonViewModel vm = new PersonViewModel();
-
             vm.tempList = PersonViewModel.listOfPeople;
 
             return View(vm);
@@ -44,5 +43,31 @@ namespace MCV.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Search(string name, string city)
+        {
+
+            PersonViewModel vm = new PersonViewModel();
+            var tempList = PersonViewModel.listOfPeople;
+            
+
+            var searchResultName = PersonViewModel.listOfPeople.Where(x => x.Name == name);
+            var searchResultCity = PersonViewModel.listOfPeople.Where(x => x.City == city);
+
+
+            foreach (var name_ in searchResultName)
+            {
+                tempList.Add(name_);
+            }
+
+            foreach (var city_ in searchResultCity)
+            {
+                tempList.Add(city_);
+            }
+
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
